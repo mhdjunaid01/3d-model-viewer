@@ -6,12 +6,12 @@ A full-stack MERN application that allows users to upload and view 3D models in 
 
 ##  Features
 
-- 📤 Upload 3D `.glb` model files to Cloudinary
-- 🧠 View interactive 3D models using React Three Fiber
-- 🌐 Hosted frontend and backend
-- 🔒 Environment-based configuration with `.env`
-- ☁️ MongoDB Atlas and Cloudinary integration
-- ⚛️ Built with React, Node.js, Express, MongoDB
+-  Upload 3D `.glb` model files to Cloudinary
+- View interactive 3D models using React Three Fiber
+-  Hosted frontend and backend
+-  Environment-based configuration with `.env`
+-  MongoDB Atlas and Cloudinary integration
+-  Built with React, Node.js, Express, MongoDB
 
 ---
 
@@ -75,8 +75,8 @@ CLOUDINARY_API_SECRET=...
 npm start
 
 Deployment
-## Frontend deployed on Vercel
-## Backend hosted on Render
+ Frontend deployed on Vercel
+ Backend hosted on Render
 
 MongoDB Atlas used as cloud database
 
