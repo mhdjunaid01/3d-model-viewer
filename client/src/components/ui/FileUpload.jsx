@@ -5,8 +5,8 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { toast } from "sonner"
-import instance from "@/api/axios"
-
+// import instance from "@/api/axios"
+import axios from "axios"
 
 export default function FileUpload({ onUploaded }) {
   const [file, setFile] = useState(null)
@@ -24,7 +24,7 @@ export default function FileUpload({ onUploaded }) {
 
     try {
       setUploading(true)
-      const res = await instance.post("/api/files/upload", formData)
+      const res = await axios.post("https://threed-backend-1bty.onrender.com/api/files/upload", formData)
       const cloudUrl = res?.data?.file?.url
       if (cloudUrl) {
         toast.success("File uploaded successfully")
