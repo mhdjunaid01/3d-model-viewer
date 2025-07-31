@@ -24,9 +24,11 @@ const HomePage = () => {
           <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
             Welcome to Infusory 3D
           </h1>
-          <p className="text-gray-600 text-lg">
-            Explore interactive 3D models right in your browser. Built with React,
-            Vite, Tailwind and ShadCN UI.
+          <p className="text-gray-600 text-lg mb-2">
+            Explore interactive 3D models right in your browser. Built with React, Tailwind and ShadCN UI.
+          </p>
+          <p className="text-gray-600 text-base">
+            Powered by popular 3D packages like <span className="font-semibold">three.js</span> and <span className="font-semibold">react-three-fiber</span>.
           </p>
         </div>
 

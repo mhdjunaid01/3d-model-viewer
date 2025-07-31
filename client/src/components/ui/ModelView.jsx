@@ -2,6 +2,8 @@
 import React, { Suspense, useMemo } from "react"
 import { Canvas } from "@react-three/fiber"
 import { ErrorBoundary } from "react-error-boundary"
+import { useLoader } from "@react-three/fiber"
+import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader"
 import {
   OrbitControls,
   useFBX,
@@ -45,7 +47,18 @@ function Model({ url }) {
     return <primitive object={scene} scale={1} />
   }
 
-  return <Html center className="text-red-500">Unsupported file type</Html>
+  if (extension === "obj") {
+    const obj = useLoader(OBJLoader, url)
+    return <primitive object={obj} scale={1} />
+  }
+
+  return (
+    <Html center>
+      <span className="text-red-400">
+        Unsupported file format: {extension}
+      </span>
+    </Html>
+  )
 }
 
 // Auto fit model on load
