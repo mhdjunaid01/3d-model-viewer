@@ -1,6 +1,8 @@
 import ModelFile from "../models/ModelFile.js";
 
 export const uploadFile = async (req, res) => {
+  console.log("File upload request received:", req.file);
+  console.log("File details:")
   try {
     if (!req.file) {
       return res.status(400).json({ message: "No file uploaded" });
@@ -28,6 +30,7 @@ export const uploadFile = async (req, res) => {
         uploadedAt: savedModel.createdAt
       }
     });
+
   } catch (error) {
     console.error("Upload Error:", error);
     res.status(500).json({ 

@@ -14,14 +14,16 @@ const storage = new CloudinaryStorage({
       if (allowedExtensions.includes(ext)) {
         return ext;
       }
-      
+
       console.error("Invalid file type:", ext);
-      throw new Error(`Invalid file type: ${ext}. Allowed: ${allowedExtensions.join(", ")}`);
+      throw new Error(
+        `Invalid file type: ${ext}. Allowed: ${allowedExtensions.join(", ")}`
+      );
     },
   },
 });
 
-const upload = multer({ 
+const upload = multer({
   storage,
   limits: {
     fileSize: 50 * 1024 * 1024, // 50MB limit
@@ -29,13 +31,13 @@ const upload = multer({
   fileFilter: (req, file, cb) => {
     console.log("File filter check:", file.originalname, file.mimetype);
     const ext = file.originalname.split(".").pop().toLowerCase();
-    
+
     if (allowedExtensions.includes(ext)) {
       cb(null, true);
     } else {
       cb(new Error(`Invalid file type: ${ext}`), false);
     }
-  }
+  },
 });
 
 export default upload;
